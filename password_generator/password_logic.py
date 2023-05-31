@@ -8,17 +8,16 @@ Criteria to generate password-
 * Atleast 1 number
 
 '''
-
+from pgr import pgrepo
 import string
 import random
 
 l_alphabets = string.ascii_lowercase
-print(l_alphabets)
 u_alphabets = string.ascii_uppercase
 symbols = string.punctuation
-print(symbols)
 number = "".join([str(num) for num in range(10)])
-print(number)
+
+
 
 #Atleast 1 of each variable in a list
 
@@ -43,4 +42,12 @@ random.shuffle(combine)
 result  = ''.join(combine)
 print(result)
 
+siter = "apple.com"
 
+
+
+
+ease_pg = pgrepo()
+
+
+ease_pg.insert_passwords(site = siter, password= result)
