@@ -8,12 +8,12 @@ class pg_rep():
         self.connection = None
         self.cursor = None
         self.logger = None
+        self.pg_conn = os.getenv("LOCAL_POSTGRES") 
         super().__init__()
 
-    def connect(self) -> object:
-        pg_conn = os.getenv("LOCAL_POSTGRES")    
+    def connect(self) -> object: 
         if self.connection is None:
-            self.connection = psycopg2.connect(pg_conn)
+            self.connection = psycopg2.connect(self.pg_conn)
             self.cursor = self.connection.cursor()
             self.connection.autocommit = True
             return self.connection

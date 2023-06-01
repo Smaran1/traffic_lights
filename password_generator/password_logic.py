@@ -42,7 +42,7 @@ random.shuffle(combine)
 result  = ''.join(combine)
 print(result)
 
-siter = "apple.com"
+# siter = "apple.com"
 
 
 
@@ -50,4 +50,4 @@ siter = "apple.com"
 ease_pg = pgrepo()
 
 
-ease_pg.insert_passwords(site = siter, password= result)
+ease_pg.insert_passwords(pass_ = result)
